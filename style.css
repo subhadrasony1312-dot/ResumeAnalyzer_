@@ -1,0 +1,152 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Using Poppins (from your HTML) instead of Cursive for better mobile readability */
+    font-family: cursive; 
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #a7ebf2, #54acbf, #26658c, #023859);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* MAIN SECTION */
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Safety padding for small screens */
+}
+
+/* GLASS CONTAINER */
+.glass-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+}
+
+/* RESPONSIVE TYPOGRAPHY */
+.glass-container h1 {
+    font-family: bold;
+    color: #09072c;
+    font-size:50px; /* Shrinks on mobile, grows on desktop */
+    margin-bottom: 1rem;
+}
+
+.glass-container p {
+    font-size: 25px;
+    font-family: cursive;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    background: #13053b;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px auto;
+    width: 500px;
+}
+
+.btn:hover {
+    background: white;
+    color: #13053b !important;
+    transform: translateY(-3px);
+}
+
+/* IMAGE FIX - This was your biggest issue */
+.robot-animation {
+    width: 100%;
+    max-width: 400px; /* Limits the size so it doesn't break the layout */
+    height: auto;
+    display: block;
+    margin: 20px auto 0;
+}
+
+/* FOOTER */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer h6 {
+    margin-bottom: 15px;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.icon {
+    font-size: 24px;
+    color: white;
+    transition: 0.3s;
+}
+
+.icon:hover {
+    color: #0c84ed;
+}
+
+/* SPINNER & LOADING STATES */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+    margin-right: 10px;
+}
+
+.btn.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* MOBILE SPECIFIC TWEAKS */
+@media (max-width: 480px) {
+    .glass-container {
+        padding: 1.5rem;
+    }
+    .btn {
+        width: 100%; /* Full width button on very small phones */
+    }
+}

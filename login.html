@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI-Based Resume Analyzer - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Using the same stylesheet for styling consistency -->
+    
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="glass-container login-container" id="container">
+            <!-- Sign Up Form -->
+            <div class="form-container sign-up-container">
+                <form id="signUpForm">
+                    <h2>Create Account</h2>
+                    
+                    
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" id="signupEmail" placeholder="Email or Phone Number" required />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPassword" placeholder="Password" required />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required />
+                    </div>
+                    
+                    <p id="signupError" class="error-msg"></p>
+                    
+                    <button type="submit" class="btn btn-primary" id="btnSignUp">Sign Up</button>
+                    
+                    <div class="toggle-panel-mobile">
+                        <span>Already have an account? <a href="#" id="mobileSignIn">Sign In</a></span>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sign In Form -->
+            <div class="form-container sign-in-container">
+                <form id="signInForm">
+                    <h2>Welcome Back!</h2>
+                    <p class="subtitle">Login with your credentials</p>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signinEmail" placeholder="Email or Phone Number" required />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signinPassword" placeholder="Password" required />
+                    </div>
+                    
+                    <p id="signinError" class="error-msg"></p>
+                    
+                    <a href="https://ai-based-resume-analyzer-wk17.onrender.com" target="_blank" class="btn btn-primary" style="display:inline-block; text-decoration:none;">Sign In</a>
+                    
+                    <div class="toggle-panel-mobile">
+                        <span>New here? <a href="#" id="mobileSignUp">Create Account</a></span>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Overlay Container for animated transition on desktop -->
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h2>Welcome Back!</h2>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="btn ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h2>Hello, Friend!</h2>
+                        <p>Enter your details and start your journey 😉</p>
+                        <button class="btn ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="login.js"></script>
+</body>
+</html>
